@@ -1,4 +1,4 @@
-﻿using Lejeu.IA_taperdefense;
+using IAPresque24h;
 
-ActionIAtaperDefense actionIAtaperDefense = new ActionIAtaperDefense();
-
+IA ia = new IA();
+ia.Jouer();
