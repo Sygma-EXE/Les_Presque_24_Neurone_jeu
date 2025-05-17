@@ -8,6 +8,7 @@ namespace Jeu_IA_neurone
         static void Main()
         {
             Connexion connexion = Connexion.Instance; 
+
         }
     }
 }
