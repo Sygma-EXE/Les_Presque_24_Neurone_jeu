@@ -5,6 +5,9 @@ namespace Interface_communication;
 /// </summary>
 public abstract class IntelligenceArtificielle
 {
+    public abstract string NomIA { get; }
+    public abstract int Equipe { get; set; }
+
     private Orchestrateur orchestrateur;
 
     /// <summary>
@@ -24,13 +27,14 @@ public abstract class IntelligenceArtificielle
     /// <returns>Prochains ordres à exécuter</returns>
     public abstract List<Message> PhaseTour(int tour, int phase, List<ReponseServeur> reponsesServeur);
 
+    
     /// <summary>
     /// Protocole de démarrage de la partie (avant que l'enchaînement des tours ne commence)
     /// </summary>
     /// <returns>Liste des instructions à envoyer au serveur lors du démarrage de la partie</returns>
     public virtual List<Message> GetProtocoleDemarragePartie()
     {
-        return [new Message("INSCRIRE")];
+        return [new Message(NomIA)];
     }
 
     /// <summary>
