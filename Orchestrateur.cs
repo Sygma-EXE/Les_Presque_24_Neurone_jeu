@@ -39,6 +39,8 @@ internal class Orchestrateur()
             {
                 Logger.Log(NiveauxLog.Info, $"Attente du tour {tourActuel}...");
                 dernierMessageServeur = AttendreMessageTransitionTour();
+                if (dernierMessageServeur.VerbeMessage.Contains("Bonjour"))
+                    ia.Equipe = Int32.Parse(dernierMessageServeur.Arguments[0]);
             } while (partieEnCours 
                      && dernierMessageServeur.VerbeMessage != Config.MessageDebutTour 
                      && dernierMessageServeur.VerbeMessage != Config.MessageFinPartie); 
