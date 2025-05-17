@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Lejeu
 {
     internal class IA : IntelligenceArtificielle
@@ -19,6 +20,16 @@ namespace Lejeu
             {
                 
             }
+            
+        private int equipe;
+        public override int Equipe
+        {
+            get => equipe;
+            set => equipe = value;
+        }
+
+        public override string NomIA => "24 NEURONES";
+
         }
     }
 }
